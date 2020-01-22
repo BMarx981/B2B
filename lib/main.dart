@@ -1,7 +1,7 @@
-import 'package:b2b/profile.dart';
 import 'package:flutter/material.dart';
 import 'rides.dart';
 import 'home.dart';
+import 'profile.dart';
 
 void main() => runApp(MyApp());
 
