@@ -14,21 +14,7 @@ class _HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 175,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    colorFilter: ColorFilter.mode(
-                        Colors.grey.withOpacity(0.75), BlendMode.overlay),
-                    fit: BoxFit.fitWidth,
-                    image: NetworkImage(
-                        "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg"),
-                  ),
-                ),
-              ),
-            ),
+            new EverybodyImage(),
             mainTextContent(),
           ],
         ),
@@ -67,6 +53,31 @@ class _HomeState extends State<Home> {
               alignment: AlignmentDirectional.bottomCenter,
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class EverybodyImage extends StatelessWidget {
+  const EverybodyImage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Container(
+        height: 175,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            colorFilter: ColorFilter.mode(
+                Colors.grey.withOpacity(0.75), BlendMode.overlay),
+            fit: BoxFit.fitWidth,
+            image: NetworkImage(
+                "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg"),
+          ),
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:b2b/profile.dart';
 import 'package:flutter/material.dart';
 import 'rides.dart';
 import 'home.dart';
@@ -28,7 +29,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Widget> _children = [Home(), RidesTab()];
+  final List<Widget> _children = [
+    Home(),
+    RidesTab(),
+    Profile(),
+  ];
   int _currentIndex = 0;
 
   void onTabTapped(int index) {
