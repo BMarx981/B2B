@@ -3,9 +3,9 @@ import 'rides.dart';
 import 'home.dart';
 import 'profile.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(B2BApp());
 
-class MyApp extends StatelessWidget {
+class B2BApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -14,21 +14,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Bike to the Beach home page.'),
+      home: B2BHomePage(title: 'Bike to the Beach home page.'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class B2BHomePage extends StatefulWidget {
+  B2BHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _B2BHomePageState createState() => _B2BHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _B2BHomePageState extends State<B2BHomePage> {
   final List<Widget> _children = [
     Home(),
     RidesTab(),
