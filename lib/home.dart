@@ -14,8 +14,8 @@ class _HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            new EverybodyImage(),
             mainTextContent(),
+            new EverybodyImage(),
           ],
         ),
       ),

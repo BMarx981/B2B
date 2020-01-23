@@ -65,7 +65,25 @@ class _B2BHomePageState extends State<B2BHomePage> {
           ],
         ),
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'b2b-logo-retina-2.png',
+                fit: BoxFit.contain,
+                height: 32,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image(
+                  image: AssetImage('assests/b2b-logo-retina-2.png'),
+                ),
+              ),
+//              Container(
+//                  padding: const EdgeInsets.all(8.0),
+//                  child: Text('Bike to the Beach'))
+            ],
+          ),
         ),
         body: _children[_currentIndex],
       ),
