@@ -11,8 +11,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
             mainTextContent(),
             new EverybodyImage(),
@@ -37,6 +36,7 @@ class _HomeState extends State<Home> {
                   fontWeight: FontWeight.bold),
             ),
             RotateAnimatedTextKit(
+              totalRepeatCount: 10,
               isRepeatingAnimation: true,
               text: [
                 "the challenge",

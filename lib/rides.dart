@@ -1,3 +1,4 @@
+import 'package:B2B/ride_selected.dart';
 import 'package:flutter/material.dart';
 
 class RidesTab extends StatefulWidget {
@@ -6,6 +7,14 @@ class RidesTab extends StatefulWidget {
 }
 
 class _RidesTabState extends State<RidesTab> {
+  _rideTapped() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => RideSelected(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -73,12 +82,15 @@ class RidesCity extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
-            city,
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: "Roboto",
-              fontSize: 50.0,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              city,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: "Roboto",
+                fontSize: 50.0,
+              ),
             ),
           ),
         ),
