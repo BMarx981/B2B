@@ -1,3 +1,4 @@
+import 'package:B2B/ride_selected.dart';
 import 'package:flutter/material.dart';
 import 'rides.dart';
 import 'home.dart';
@@ -14,7 +15,12 @@ class B2BApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: B2BHomePage(title: 'Bike to the Beach home page.'),
+      home: B2BHomePage(title: "Bike to the Beach"),
+      routes: {
+        RideSelected.id: (context) => RideSelected(),
+        B2BHomePage.id: (context) => B2BHomePage(),
+      },
+      initialRoute: B2BHomePage.id,
     );
   }
 }
@@ -22,6 +28,7 @@ class B2BApp extends StatelessWidget {
 class B2BHomePage extends StatefulWidget {
   B2BHomePage({Key key, this.title}) : super(key: key);
 
+  static const id = "homeRoute";
   final String title;
 
   @override
