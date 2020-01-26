@@ -12,7 +12,7 @@ class B2BApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bike to the Beach',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: primaryBlue,
       ),
       home: B2BHomePage(title: 'Bike to the Beach home page.'),
     );
@@ -87,3 +87,16 @@ class _B2BHomePageState extends State<B2BHomePage> {
     );
   }
 }
+
+MaterialColor primaryBlue = const MaterialColor(0xff075c93, const <int, Color>{
+  50: Color(0xff075c93),
+  100: Color(0xff075c93),
+  200: Color(0xff075c93),
+  300: Color(0xff075c93),
+  400: Color(0xff075c93),
+  500: Color(0xff075c93),
+  600: Color(0xff075c93),
+  700: Color(0xff075c93),
+  800: Color(0xff075c93),
+  900: Color(0xff075c93),
+});

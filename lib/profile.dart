@@ -28,10 +28,10 @@ class _ProfileState extends State<Profile> {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
-    final loginButon = Material(
+    final loginButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color(0xff01A0C7),
+      color: Color(0xff075c93),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -45,19 +45,26 @@ class _ProfileState extends State<Profile> {
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
           children: <Widget>[
             Container(
-              child: Image.asset("assests/B2BIcon.png"),
+              child: Image.asset(
+                "assests/B2BIcon.png",
+                height: 272.0,
+              ),
             ),
-            SizedBox(height: 50),
-            emailField,
-            SizedBox(height: 50),
-            passwordField,
-            SizedBox(height: 50),
-            loginButon
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: emailField,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: passwordField,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: loginButton,
+            )
           ],
         ),
       ),
