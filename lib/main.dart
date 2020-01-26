@@ -79,9 +79,6 @@ class _B2BHomePageState extends State<B2BHomePage> {
                   image: AssetImage('assests/b2b-logo-retina-2.png'),
                 ),
               ),
-//              Container(
-//                  padding: const EdgeInsets.all(8.0),
-//                  child: Text('Bike to the Beach'))
             ],
           ),
         ),
