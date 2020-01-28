@@ -66,6 +66,7 @@ class _RidesTabState extends State<RidesTab> {
 class RidesCity extends StatelessWidget {
   final String city;
   final String imageLink;
+  final textOutline = Color(0xff075c93);
   RidesCity({this.city, this.imageLink});
 
   @override
@@ -78,6 +79,8 @@ class RidesCity extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
+            colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.8), BlendMode.dstATop),
             image: NetworkImage(imageLink),
           ),
         ),
@@ -87,7 +90,25 @@ class RidesCity extends StatelessWidget {
             child: Text(
               city,
               style: TextStyle(
-                color: Colors.white,
+                shadows: [
+                  Shadow(
+                      // bottomLeft
+                      offset: Offset(-1.5, -1.5),
+                      color: textOutline),
+                  Shadow(
+                      // bottomRight
+                      offset: Offset(1.5, -1.5),
+                      color: textOutline),
+                  Shadow(
+                      // topRight
+                      offset: Offset(1.5, 1.5),
+                      color: textOutline),
+                  Shadow(
+                      // topLeft
+                      offset: Offset(-1.5, 1.5),
+                      color: textOutline),
+                ],
+                color: Color(0xFFFED344),
                 fontFamily: "Roboto",
                 fontSize: 50.0,
               ),

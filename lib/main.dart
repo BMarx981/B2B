@@ -69,14 +69,14 @@ class _B2BHomePageState extends State<B2BHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'b2b-logo-retina-2.png',
+                'b2bTitle.png',
                 fit: BoxFit.contain,
                 height: 32,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Image(
-                  image: AssetImage('assests/b2b-logo-retina-2.png'),
+                  image: AssetImage('assests/b2bTitle.png'),
                 ),
               ),
             ],
