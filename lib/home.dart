@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -14,7 +15,12 @@ class _HomeState extends State<Home> {
         child: ListView(
           children: <Widget>[
             mainTextContent(),
-            new EverybodyImage(),
+//            new EverybodyImage(),
+            FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image:
+                  "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg",
+            )
           ],
         ),
       ),
@@ -75,22 +81,6 @@ class EverybodyImage extends StatelessWidget {
             colorFilter: ColorFilter.mode(
                 Colors.grey.withOpacity(0.75), BlendMode.overlay),
             fit: BoxFit.fitWidth,
-//            image: Image.network(
-//              "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg",
-//              fit: BoxFit.cover,
-//              loadingBuilder: (BuildContext context, Widget child,
-//                  ImageChunkEvent loadingProgress) {
-//                if (loadingProgress == null) return child;
-//                return Center(
-//                  child: CircularProgressIndicator(
-//                    value: loadingProgress.expectedTotalBytes != null
-//                        ? loadingProgress.cumulativeBytesLoaded /
-//                            loadingProgress.expectedTotalBytes
-//                        : null,
-//                  ),
-//                );
-//              },
-//            ),
             image: NetworkImage(
               "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg",
             ),
