@@ -119,19 +119,19 @@ class RidesCity extends StatelessWidget {
                   ],
                   color: Color(0xFFFED344),
                   fontFamily: "Roboto",
-                  fontSize: 50.0,
+                  fontSize: 40.0,
                 ),
               ),
             ),
             SizedBox(height: 20),
-//            Divider(
-//              color: Color(0xFF075c93),
-//              height: 30.0,
-//            ),
-            Text(
-              theDate,
-              style: TextStyle(
-                  color: Color(0xFFFED344), fontFamily: "Roboto", fontSize: 20),
+            Expanded(
+              child: Text(
+                theDate,
+                style: TextStyle(
+                    color: Color(0xFFFED344),
+                    fontFamily: "Roboto",
+                    fontSize: 20),
+              ),
             ),
           ],
         ),
