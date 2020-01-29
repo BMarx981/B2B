@@ -23,11 +23,14 @@ class _HomeState extends State<Home> {
             ),
             aboutUsContent(),
             statsRow(),
+//            _supporters(),
           ],
         ),
       ),
     );
   }
+
+  Container _supporters() {}
 
   Container mainTextContent() {
     return Container(
@@ -163,29 +166,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-//Column(
-//children: <Widget>[
-//_yellowCircle(
-//Icon(
-//Icons.directions_bike,
-//size: 35,
-//color: Color(0xff075c93),
-//),
-//), // yellowCircle
-//Text(
-//"529K",
-//style: TextStyle(
-//fontSize: 30,
-//color: Color(0xff075c93),
-//),
-//),
-//Text(
-//"Miles Biked",
-//style: TextStyle(
-//fontFamily: "Lato",
-//fontSize: 15.0,
-//),
-//)
-//],
-//),

@@ -65,21 +65,12 @@ class _B2BHomePageState extends State<B2BHomePage> {
           ],
         ),
         appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'b2bTitle.png',
-                fit: BoxFit.contain,
-                height: 32,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image(
-                  image: AssetImage('assests/b2bTitle.png'),
-                ),
-              ),
-            ],
+          title: Padding(
+            padding: const EdgeInsets.all(38.0),
+            child: Image(
+              fit: BoxFit.contain,
+              image: AssetImage('assests/b2bTitle.png'),
+            ),
           ),
         ),
         body: _children[_currentIndex],
