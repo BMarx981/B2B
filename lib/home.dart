@@ -14,13 +14,15 @@ class _HomeState extends State<Home> {
       child: Center(
         child: ListView(
           children: <Widget>[
+            // This is the main page's content
             mainTextContent(),
-//            new EverybodyImage(),
             FadeInImage.memoryNetwork(
               placeholder: kTransparentImage,
               image:
                   "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg",
-            )
+            ),
+            aboutUsContent(),
+            statsRow(),
           ],
         ),
       ),
@@ -63,30 +65,127 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-}
 
-class EverybodyImage extends StatelessWidget {
-  const EverybodyImage({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Container(
-        height: 175,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            colorFilter: ColorFilter.mode(
-                Colors.grey.withOpacity(0.75), BlendMode.overlay),
-            fit: BoxFit.fitWidth,
-            image: NetworkImage(
-              "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg",
+  Container aboutUsContent() {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            Text(
+              "Who We Are",
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: Color(0xff075c93),
+              ),
             ),
-          ),
+            Text(
+                "Bike to the Beach is a community of people who combine biking, purpose, and fun to inspire individuals to overcome obstacles through personal challenge and to inspire the larger community to raise funds and awareness for Autism, the most prevalent developmental disability in the world.",
+                style: TextStyle(
+                  fontFamily: "Roboto",
+                  fontSize: 20,
+                  fontWeight: FontWeight.w100,
+                )),
+          ],
         ),
       ),
     );
   }
+
+  Container statsRow() {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Text(
+            "What We've Done",
+            style: TextStyle(
+              fontSize: 30,
+              color: Color(0xff075c93),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  whatWeDoColumn(Icons.directions_bike, "529K", "Miles Biked"),
+                  whatWeDoColumn(Icons.attach_money, "4.5M", "Raised"),
+                  whatWeDoColumn(Icons.location_city, "7", "Cities"),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container _yellowCircle(Icon icon) {
+    return Container(
+      width: 50.0,
+      height: 50.0,
+      child: icon,
+      decoration: BoxDecoration(
+        color: Color(0xFFFED344),
+        shape: BoxShape.circle,
+      ),
+    );
+  }
+
+  Column whatWeDoColumn(IconData icon, String numbers, String info) {
+    return Column(
+      children: <Widget>[
+        _yellowCircle(
+          Icon(
+            icon,
+            size: 35,
+            color: Color(0xff075c93),
+          ),
+        ), // yellowCircle
+        Text(
+          numbers,
+          style: TextStyle(
+            fontSize: 30,
+            color: Color(0xff075c93),
+          ),
+        ),
+        Text(
+          info,
+          style: TextStyle(
+            fontFamily: "Lato",
+            fontSize: 15.0,
+          ),
+        )
+      ],
+    );
+  }
 }
+
+//Column(
+//children: <Widget>[
+//_yellowCircle(
+//Icon(
+//Icons.directions_bike,
+//size: 35,
+//color: Color(0xff075c93),
+//),
+//), // yellowCircle
+//Text(
+//"529K",
+//style: TextStyle(
+//fontSize: 30,
+//color: Color(0xff075c93),
+//),
+//),
+//Text(
+//"Miles Biked",
+//style: TextStyle(
+//fontFamily: "Lato",
+//fontSize: 15.0,
+//),
+//)
+//],
+//),
