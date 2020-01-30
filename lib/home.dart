@@ -1,6 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -16,10 +16,12 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             // This is the main page's content
             mainTextContent(),
-            FadeInImage.memoryNetwork(
-              placeholder: kTransparentImage,
-              image:
-                  "https://biketothebeach.org/wp-content/uploads/2018/02/W3A8138_web.jpg",
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25.0),
+                child: Image.asset("assests/B2BEveryone.png"),
+              ),
             ),
             aboutUsContent(),
             statsRow(),
@@ -36,33 +38,38 @@ class _HomeState extends State<Home> {
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(18.0),
-        child: Row(
+        child: Column(
           children: <Widget>[
-            Text(
-              "Bike for ",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.bold),
-            ),
-            RotateAnimatedTextKit(
-              totalRepeatCount: 10,
-              isRepeatingAnimation: true,
-              text: [
-                "the challenge",
-                "fun",
-                "friends",
-                "Autisim",
+            Row(
+              children: <Widget>[
+                Text(
+                  "Bike for ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                      fontFamily: "Roboto",
+                      fontWeight: FontWeight.bold),
+                ),
+                RotateAnimatedTextKit(
+                  totalRepeatCount: 10,
+                  isRepeatingAnimation: true,
+                  text: [
+                    "the challenge",
+                    "fun",
+                    "friends",
+                    "Autisim",
+                  ],
+                  textStyle: TextStyle(
+                      color: Color(0xFFFED344),
+                      fontSize: 30,
+                      fontFamily: "Roboto",
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.start,
+                  alignment: AlignmentDirectional.bottomCenter,
+                ),
               ],
-              textStyle: TextStyle(
-                  color: Color(0xFFFED344),
-                  fontSize: 30,
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.start,
-              alignment: AlignmentDirectional.bottomCenter,
             ),
+//            Image.asset("assests/Autism-Speaks.png"),
           ],
         ),
       ),
