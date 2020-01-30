@@ -8,6 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final b2bBlue = Color(0xff075c93);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +26,131 @@ class _HomeState extends State<Home> {
             ),
             aboutUsContent(),
             statsRow(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _whyWeBike(),
+            ),
 //            _supporters(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _whyWeBike() {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(width: 1.5, color: b2bBlue),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: <Widget>[
+            Text(
+              "Why Bike With Us",
+              style: TextStyle(
+                color: b2bBlue,
+                fontWeight: FontWeight.w200,
+                fontFamily: "Roboto",
+                fontSize: 40.0,
+              ),
+            ),
+            Text(
+              "Bike to the Beach is here to empower your community, "
+              "help you achieve your goals, surpass your personal challenges, "
+              "and to raise funds for autism awareness. Join us and you will",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: b2bBlue,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Flexible(
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset("assests/Bike-challenge-Fun-white.png"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Experience your town like never before in America's "
+                          "only autism bike series.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: b2bBlue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Flexible(
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset("assests/Bike-challenge-Fun-white.png"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Make an amazing impact in the autism community.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: b2bBlue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Flexible(
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset("assests/ribbon.png"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Take on a new fitness challenge with all the details taken care of.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: b2bBlue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Flexible(
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset("assests/puzzle-piece.png"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Meet new friends and enjoy a healthier life.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: b2bBlue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -87,7 +212,7 @@ class _HomeState extends State<Home> {
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff075c93),
+                color: b2bBlue,
               ),
             ),
             Text(
@@ -111,7 +236,7 @@ class _HomeState extends State<Home> {
             "What We've Done",
             style: TextStyle(
               fontSize: 30,
-              color: Color(0xff075c93),
+              color: b2bBlue,
             ),
           ),
           Center(
@@ -152,14 +277,14 @@ class _HomeState extends State<Home> {
           Icon(
             icon,
             size: 35,
-            color: Color(0xff075c93),
+            color: b2bBlue,
           ),
         ), // yellowCircle
         Text(
           numbers,
           style: TextStyle(
             fontSize: 30,
-            color: Color(0xff075c93),
+            color: b2bBlue,
           ),
         ),
         Text(
