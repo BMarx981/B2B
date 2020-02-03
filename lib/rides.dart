@@ -7,11 +7,10 @@ class RidesTab extends StatefulWidget {
 }
 
 class _RidesTabState extends State<RidesTab> {
-  _rideTapped() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => RideSelected(),
-      ),
+  _rideTapped(context) {
+    Navigator.pushNamed(
+      context,
+      "ride_selected",
     );
   }
 
