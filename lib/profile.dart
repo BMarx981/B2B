@@ -42,30 +42,32 @@ class _ProfileState extends State<Profile> {
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            Container(
-              child: Image.asset(
-                "assests/B2BIcon.png",
-                height: 272.0,
+    return Scaffold(
+      body: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                child: Image.asset(
+                  "assests/B2BIcon.png",
+                  height: 272.0,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: emailField,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: passwordField,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: loginButton,
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: emailField,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: passwordField,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: loginButton,
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -11,27 +11,29 @@ class _HomeState extends State<Home> {
   final b2bBlue = Color(0xff075c93);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: ListView(
-          children: <Widget>[
-            // This is the main page's content
-            mainTextContent(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset("assests/B2BEveryone.png"),
+    return Scaffold(
+      body: Container(
+        child: Center(
+          child: ListView(
+            children: <Widget>[
+              // This is the main page's content
+              mainTextContent(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25.0),
+                  child: Image.asset("assests/B2BEveryone.png"),
+                ),
               ),
-            ),
-            aboutUsContent(),
-            statsRow(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: _whyWeBike(),
-            ),
+              aboutUsContent(),
+              statsRow(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: _whyWeBike(),
+              ),
 //            _supporters(),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -65,96 +67,67 @@ class _HomeState extends State<Home> {
                 color: b2bBlue,
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Flexible(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset("assests/Bike-challenge-Fun-white.png"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Experience your town like never before in America's "
-                          "only autism bike series.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: b2bBlue,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset("assests/Bike-challenge-Fun-white.png"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Make an amazing impact in the autism community.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: b2bBlue,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset("assests/ribbon.png"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Take on a new fitness challenge with all the details taken care of.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: b2bBlue,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset("assests/puzzle-piece.png"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Meet new friends and enjoy a healthier life.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: b2bBlue,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                _bikeWithUsImageRow(
+                    "assests/Bike-challenge-Fun-white.png",
+                    "Experience your town like never before in America's "
+                        "only autism bike series."),
+                _bikeWithUsImageRow("assests/puzzle-piece.png",
+                    "Make an amazing impact in the autism community."),
+                _bikeWithUsImageRow("assests/ribbon.png",
+                    "Take on a new fitness challenge with all the details taken care of."),
+                _bikeWithUsImageRow("assests/celebration.png",
+                    "Meet new friends and enjoy a healthier life."),
               ],
-            )
+            ),
           ],
         ),
       ),
     );
+  }
+
+  Expanded _bikeWithUsImageRow(String imageName, String text) {
+    return Expanded(
+//      fit: FlexFit.loose,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: _imageBox(imageName),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: b2bBlue,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container _imageBox(String imageName) {
+    return Container(
+        height: 75,
+        width: 75,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: b2bBlue,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Image.asset(imageName),
+        ));
   }
 
   Container _supporters() {}
