@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Home extends StatefulWidget {
+  static final b2bBlue = Color(0xff075c93);
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  final b2bBlue = Color(0xff075c93);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,6 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.all(8.0),
                 child: _whyWeBike(),
               ),
-//            _supporters(),
             ],
           ),
         ),
@@ -43,7 +42,7 @@ class _HomeState extends State<Home> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(width: 1.5, color: b2bBlue),
+        border: Border.all(width: 1.5, color: Home.b2bBlue),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -52,7 +51,7 @@ class _HomeState extends State<Home> {
             Text(
               "Why Bike With Us",
               style: TextStyle(
-                color: b2bBlue,
+                color: Home.b2bBlue,
                 fontWeight: FontWeight.w200,
                 fontFamily: "Roboto",
                 fontSize: 40.0,
@@ -64,7 +63,7 @@ class _HomeState extends State<Home> {
               "and to raise funds for autism awareness. Join us and you will",
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: b2bBlue,
+                color: Home.b2bBlue,
               ),
             ),
             SizedBox(
@@ -92,7 +91,6 @@ class _HomeState extends State<Home> {
 
   Expanded _bikeWithUsImageRow(String imageName, String text) {
     return Expanded(
-//      fit: FlexFit.loose,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -107,7 +105,7 @@ class _HomeState extends State<Home> {
               text,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: b2bBlue,
+                color: Home.b2bBlue,
               ),
             ),
           ),
@@ -122,7 +120,7 @@ class _HomeState extends State<Home> {
         width: 75,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: b2bBlue,
+          color: Home.b2bBlue,
         ),
         child: Padding(
           padding: const EdgeInsets.all(4.0),
@@ -167,7 +165,6 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-//            Image.asset("assests/Autism-Speaks.png"),
           ],
         ),
       ),
@@ -185,7 +182,7 @@ class _HomeState extends State<Home> {
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
-                color: b2bBlue,
+                color: Home.b2bBlue,
               ),
             ),
             Text(
@@ -209,7 +206,7 @@ class _HomeState extends State<Home> {
             "What We've Done",
             style: TextStyle(
               fontSize: 30,
-              color: b2bBlue,
+              color: Home.b2bBlue,
             ),
           ),
           Center(
@@ -250,14 +247,14 @@ class _HomeState extends State<Home> {
           Icon(
             icon,
             size: 35,
-            color: b2bBlue,
+            color: Home.b2bBlue,
           ),
         ), // yellowCircle
         Text(
           numbers,
           style: TextStyle(
             fontSize: 30,
-            color: b2bBlue,
+            color: Home.b2bBlue,
           ),
         ),
         Text(

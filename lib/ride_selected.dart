@@ -10,6 +10,15 @@ class RideSelected extends StatefulWidget {
 class _RideSelectedState extends State<RideSelected> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container(child: Text("You have arrived")));
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Ride Details"),
+        ),
+        body: Container(
+          child: Text("You have arrived"),
+        ),
+      ),
+    );
   }
 }

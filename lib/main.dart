@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'rides.dart';
+import 'ride_selected.dart';
 import 'home.dart';
 import 'profile.dart';
 
@@ -10,12 +11,15 @@ class B2BApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bike to the Beach',
-      theme: ThemeData(
-        primarySwatch: primaryBlue,
-      ),
-      home: B2BHomePage(title: 'Bike to the Beach home page.'),
-    );
+        title: 'Bike to the Beach',
+        theme: ThemeData(
+          primarySwatch: primaryBlue,
+        ),
+        initialRoute: "home",
+        routes: {
+          "home": (context) => B2BHomePage(),
+          RideSelected.id: (context) => RideSelected(),
+        });
   }
 }
 
@@ -47,6 +51,8 @@ class _B2BHomePageState extends State<B2BHomePage> {
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Home.b2bBlue,
+          backgroundColor: Color(0xFFEEEEEE),
           onTap: onTabTapped,
           currentIndex: _currentIndex,
           items: [
