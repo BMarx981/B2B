@@ -7,10 +7,13 @@ class RidesTab extends StatefulWidget {
 }
 
 class _RidesTabState extends State<RidesTab> {
-  _rideTapped(context) {
-    Navigator.pushNamed(
-      context,
-      RideSelected.id,
+  _rideTapped(context, title) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => RideSelected(
+          title: title,
+        ),
+      ),
     );
   }
 
@@ -22,7 +25,7 @@ class _RidesTabState extends State<RidesTab> {
           child: ListView(
             children: <Widget>[
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "Florida"),
                 child: RidesCity(
                   theDate: "February 15, 2020",
                   city: "Florida",
@@ -31,7 +34,7 @@ class _RidesTabState extends State<RidesTab> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "New York"),
                 child: RidesCity(
                   theDate: "June 5, 2020",
                   city: "New York",
@@ -40,7 +43,7 @@ class _RidesTabState extends State<RidesTab> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "Washington DC"),
                 child: RidesCity(
                   theDate: "July 31, 2020",
                   city: "Washington DC",
@@ -49,7 +52,7 @@ class _RidesTabState extends State<RidesTab> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "Maryland"),
                 child: RidesCity(
                   theDate: "July 31, 2020",
                   city: "Maryland",
@@ -58,7 +61,7 @@ class _RidesTabState extends State<RidesTab> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "New England"),
                 child: RidesCity(
                   theDate: "September 2020",
                   city: "New England",
@@ -67,7 +70,7 @@ class _RidesTabState extends State<RidesTab> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "Texas"),
                 child: RidesCity(
                   theDate: "Fall 2020",
                   city: "Texas",
@@ -76,7 +79,7 @@ class _RidesTabState extends State<RidesTab> {
                 ),
               ),
               GestureDetector(
-                onTap: () => _rideTapped(context),
+                onTap: () => _rideTapped(context, "Bay Area"),
                 child: RidesCity(
                   theDate: "May 9, 2020",
                   city: "Bay Area",
