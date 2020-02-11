@@ -73,9 +73,12 @@ class _B2BHomePageState extends State<B2BHomePage> {
         appBar: AppBar(
           title: Padding(
             padding: const EdgeInsets.all(38.0),
-            child: Image(
-              fit: BoxFit.contain,
-              image: AssetImage('assests/b2bTitle.png'),
+            child: Hero(
+              tag: 'title',
+              child: Image(
+                fit: BoxFit.contain,
+                image: AssetImage('assests/b2bTitle.png'),
+              ),
             ),
           ),
         ),

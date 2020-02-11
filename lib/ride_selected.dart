@@ -71,7 +71,17 @@ class _RideSelectedState extends State<RideSelected> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("${widget.title} Ride Details"),
+          title: Padding(
+            padding: const EdgeInsets.all(38.0),
+            child: Hero(
+              tag: 'title',
+              child: Image(
+                fit: BoxFit.contain,
+                image: AssetImage('assests/b2bTitle.png'),
+              ),
+            ),
+          ),
+//          title: Text("${widget.title} Ride Details"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),

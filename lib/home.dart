@@ -146,8 +146,9 @@ class _HomeState extends State<Home> {
                       fontFamily: "Roboto",
                       fontWeight: FontWeight.bold),
                 ),
-                RotateAnimatedTextKit(
-                  totalRepeatCount: 10,
+                TypewriterAnimatedTextKit(
+                  speed: Duration(milliseconds: 300),
+//                  totalRepeatCount: 10,
                   isRepeatingAnimation: true,
                   text: [
                     "the challenge",
