@@ -11,27 +11,29 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: ListView(
-            children: <Widget>[
-              // This is the main page's content
-              mainTextContent(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(25.0),
-                  child: Image.asset("assests/B2BEveryone.png"),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          child: Center(
+            child: ListView(
+              children: <Widget>[
+                // This is the main page's content
+                mainTextContent(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25.0),
+                    child: Image.asset("assests/B2BEveryone.png"),
+                  ),
                 ),
-              ),
-              aboutUsContent(),
-              statsRow(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _whyWeBike(),
-              ),
-            ],
+                aboutUsContent(),
+                statsRow(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _whyWeBike(),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -128,7 +130,7 @@ class _HomeState extends State<Home> {
         ));
   }
 
-  Container _supporters() {}
+  // Container _supporters() {}
 
   Container mainTextContent() {
     return Container(
